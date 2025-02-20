@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-bricolage-grotesque: "Bricolage Grotesque", sans-serif;
+  --font-geist-mono: "Geist Mono", monospace;
+}
+body , html {
+  font-family: var(--font-bricolage-grotesque);
+  overflow-x: hidden;
+}
+body {
+  font-family: var(--font-bricolage-grotesque);
+}
+
+
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* أبيض */
+    --foreground: 0 0% 0%; /* أسود */
+    --card: 0 0% 100%; /* أبيض */
+    --card-foreground: 0 0% 0%; /* أسود */
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    --primary: 0 100% 50%; /* أسود */
+    --primary-foreground: 0 0% 100%; /* أبيض */
+    --secondary: 0 0% 90%; /* رمادي فاتح */
+    --secondary-foreground: 0 0% 0%; /* أسود */
+    --muted: 0 0% 85%; /* رمادي */
+    --muted-foreground: 0 0% 20%; /* رمادي غامق */
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 100% 40%; /* أحمر غامق */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 60%; /* رمادي متوسط */
+    --input: 0 0% 20%;
+    --ring: 0 100% 50%; /* أحمر */
+    --radius: 0.5rem;
+
+    /* 🎨 ألوان المخططات (Charts) */
+    --chart-1: 0 100% 50%; /* أحمر */
+    --chart-2: 30 100% 50%; /* برتقالي */
+    --chart-3: 60 100% 50%; /* أصفر */
+    --chart-4: 120 100% 40%; /* أخضر */
+    --chart-5: 200 100% 50%; /* أزرق */
+  }
+
+  .dark {
+    --background: 0 0% 10%; /* أسود فاتح */
+    --foreground: 0 0% 100%; /* أبيض */
+    --card: 0 0% 15%; /* رمادي داكن */
+    --card-foreground: 0 0% 100%; /* أبيض */
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 100% 50%; /* أحمر */
+    --primary-foreground: 0 0% 100%; /* أبيض */
+    --secondary: 0 0% 20%; /* رمادي داكن */
+    --secondary-foreground: 0 0% 100%; /* أبيض */
+    --muted: 0 0% 25%;
+    --muted-foreground: 0 0% 75%;
+    --accent: 0 100% 40%; /* أحمر غامق */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 100% 30%; /* أحمر أغمق */
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 30%; /* رمادي داكن */
+    --input: 0 0% 40%;
+    --ring: 0 100% 50%; /* أحمر */
+
+    /* 🎨 ألوان المخططات (Charts) */
+    --chart-1: 0 100% 50%; /* أحمر */
+    --chart-2: 30 100% 50%; /* برتقالي */
+    --chart-3: 60 100% 50%; /* أصفر */
+    --chart-4: 120 100% 40%; /* أخضر */
+    --chart-5: 200 100% 50%; /* أزرق */
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .container {
+    @apply mx-auto px-4 md:px-8 lg:px-16 xl:px-32;
+  }
+  .section-gap {
+    @apply my-8 md:my-16;
+  }
+  .element-center {
+    @apply flex items-center justify-center;
+  }
+}
