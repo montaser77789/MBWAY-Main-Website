@@ -15,14 +15,14 @@ import Image from "next/image";
 const Hero = () => {
   return (
     <div>
-      <h1 className="text-[40px] lg:text-[80px]  font-bold">
+      <h1 className="text-[40px] lg:text-[80px] leading-10  font-bold mt-1 lg:mt-3">
         Your life is our responsibility
       </h1>
-      <p className="text-[24px] lg:text-[40px] pt-4  font-medium leading-[33px] lg:leading-[56px] ">
-        We provide everything you need with excellence - Medical and Engineering
-        solutions, Business solutions , Commerce Real Estate , Tourism , and
-        Education
-      </p>
+      <p className="text-[24px] lg:text-[40px] pt-5 font-medium leading-[33px] lg:leading-[56px] text-justify">
+  We provide everything you need with excellence - Medical and Engineering
+  solutions, Business solutions, Commerce Real Estate, Tourism, and Education
+</p>
+
       <div className="flex w-full items-center space-x-2 pt-4">
         <Input
           type="text"
