@@ -10,18 +10,17 @@ import img from "../../../../public/assets/images/Photo Frame.png";
 import img2 from "../../../../public/assets/images/Photo Frame (1).png";
 import img3 from "../../../../public/assets/images/Photo Frame (2).png";
 import img4 from "../../../../public/assets/images/Photo Frame 4.png";
+
 import Image from "next/image";
 
 const Hero = () => {
+  const images = [img, img2, img3, img4, img2, img3, img4];
   return (
-    <div>
+    <div className="container">
       <h1 className="text-[40px] lg:text-[80px] leading-10  font-bold mt-1 lg:mt-3">
         Your life is our responsibility
       </h1>
-      <p
-        className="text-[24px] lg:text-[40px] pt-4 font-medium leading-[33px] lg:leading-[56px]   "
-   
-      >
+      <p className="text-[24px] lg:text-[40px] pt-4 font-medium leading-[33px] lg:leading-[56px] ">
         We provide everything you need with excellence - Medical and Engineering
         solutions, Business solutions, Commerce Real Estate, Tourism, and
         Education
@@ -40,24 +39,11 @@ const Hero = () => {
       <div className="pt-4 mt-2">
         <Carousel>
           <CarouselContent>
-            <CarouselItem className="basis-1/1 md:basis-1/4">
-              <Image src={img} alt="" />
-            </CarouselItem>
-            <CarouselItem className="basis-1/1 md:basis-1/4">
-              <Image src={img2} alt="" />
-            </CarouselItem>
-            <CarouselItem className="basis-1/1 md:basis-1/4">
-              <Image src={img3} alt="" />
-            </CarouselItem>
-            <CarouselItem className="basis-1/1 md:basis-1/4">
-              <Image src={img4} alt="" />
-            </CarouselItem>
-            <CarouselItem className="basis-1/1 md:basis-1/4">
-              <Image src={img} alt="" />
-            </CarouselItem>
-            <CarouselItem className="basis-1/1 md:basis-1/4">
-              <Image src={img} alt="" />
-            </CarouselItem>
+            {images.map((image, index) => (
+              <CarouselItem key={index} className="basis-1/1 md:basis-1/4">
+                <Image src={image} alt="" />
+              </CarouselItem>
+            ))}
           </CarouselContent>
         </Carousel>
       </div>

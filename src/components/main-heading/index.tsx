@@ -1,0 +1,13 @@
+import React from 'react'
+
+const MainHeading = ({title , subtitle}: {title: string, subtitle: string}) => {
+  return (
+    <div>
+        <h2 className='text-[40px] font-bold md:text-[50px] text-primary '><span className='text-foreground'>Our</span> {title}</h2>
+        <p className='mt-2 text-[24px] font-medium md:text-[32px]'>{subtitle}</p>
+      
+    </div>
+  )
+}
+
+export default MainHeading

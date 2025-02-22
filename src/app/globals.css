@@ -6,15 +6,14 @@
   --font-bricolage-grotesque: "Bricolage Grotesque", sans-serif;
   --font-geist-mono: "Geist Mono", monospace;
 }
-body , html {
+body,
+html {
   font-family: var(--font-bricolage-grotesque);
   overflow-x: hidden;
 }
 body {
   font-family: var(--font-bricolage-grotesque);
 }
-
-
 
 @layer base {
   :root {
@@ -77,8 +76,6 @@ body {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -94,5 +91,40 @@ body {
   }
   .element-center {
     @apply flex items-center justify-center;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+.embla {
+  overflow: hidden; /* يمنع التمرير الأفقي */
+  width: 100%;
+}
+
+.embla__container {
+  display: flex;
+  width: 100%; /* يضمن أن الشرائح لا تتجاوز العرض */
+}
+
+
+.embla__slide {
+  flex: 0 0 90%; /* عرض الشريحة 90% مع ظهور جزء من التالية */
+  margin-right: 10px;
+  position: relative;
+}
+
+/* لجعل الشرائح مناسبة للموبايل */
+@media (max-width: 768px) {
+  .embla__slide {
+    flex: 0 0 100%; /* كل شريحة تأخذ 100% من العرض */
+    margin-right: 0; /* إزالة المسافات الجانبية */
   }
 }
