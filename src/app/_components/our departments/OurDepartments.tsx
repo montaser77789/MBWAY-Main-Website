@@ -122,11 +122,14 @@ const OurDepartments = () => {
                     style={{ flex: "0 0 90%", marginRight: "20px" }} // عرض الشريحة وإظهار جزء من الشريحة التالية
                   >
                     <div
-                      className="p-4 h-[700px] md:h-[500px] bg-cover bg-center bg-no-repeat rounded-xl"
+                      className="p-4 h-[660px] md:h-[500px] bg-cover bg-center bg-no-repeat rounded-xl relative !text-white"
                       style={{ backgroundImage: `url("${slide.image}")` }}
                     >
-                      <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] w-full h-full">
-                        <div className="w-full md:w-3/4 lg:w-2/3 space-y-1 md:space-y-4 flex-1  ">
+                      {/* Overlay Layer */}
+                      <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] w-full h-full relative z-10">
+                        <div className="w-full md:w-3/4 lg:w-2/3 space-y-1 md:space-y-4 flex-1 text-white">
                           <h2 className="text-[30px] md:text-[40px] font-bold mt-0 p-0 leading-7">
                             {slide.title}
                           </h2>
