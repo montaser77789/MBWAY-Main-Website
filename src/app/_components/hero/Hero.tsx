@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <div className="container">
-      <h1 className="text-[40px] lg:text-[80px] leading-10 font-bold mt-1 lg:mt-3" data-aos="fade-down">
+      <h1  className="text-[40px] lg:text-[80px] leading-10 lg:leading-[70px] font-bold mt-1 lg:mt-3" data-aos="fade-down">
         Your life is our responsibility
       </h1>
       <p

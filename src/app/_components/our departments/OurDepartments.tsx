@@ -1,12 +1,12 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import AOS from "aos";
-import "aos/dist/aos.css"; // استيراد أنماط AOS
 import { ScrollArea } from "@/components/ui/scroll-area";
 import MainHeading from "@/components/main-heading";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const slidesData = [
   {
@@ -21,19 +21,21 @@ const slidesData = [
       "Reliable services with product warranties",
     ],
   },
+
   {
     image: "/assets/images/Photo Frame.png",
     imageSection: "/assets/images/blond-man-with-hat-looking-camera 1.png",
 
-    title: "Medical sector in MBWAY",
+    title: "Tourism in MBWAY is different",
     description:
-      "healthcare with cutting-edge technology and highly qualified medical staff, ensuring your well-being and recovery ",
+      "Discover the world with our company, where every journey becomes an unforgettable experience",
     listItems: [
-      "Free and paid consultations",
-      "Trusted brands and verified quality",
-      "Fast and secure delivery options",
+      "Customized travel packages to suit all needs",
+      "Luxury hotel bookings at competitive prices",
+      "Guided tours with professional experts",
     ],
   },
+
   {
     image: "/assets/images/Photo Frame.png",
     imageSection: "/assets/images/two-colleagues-factory 1.png",
@@ -49,28 +51,30 @@ const slidesData = [
   },
   {
     image: "/assets/images/Photo Frame.png",
-    imageSection: "/assets/images/blond-man-with-hat-looking-camera 1.png",
+    imageSection:
+      "/assets/images/graduation-concept-with-portrait-happy-man 1.png",
 
-    title: "Tourism in MBWAY is different",
+    title: "MBWAY - Path to Success ",
     description:
-      "Discover the world with our company, where every journey becomes an unforgettable experience",
+      "Embark on an exceptional learning experience that combines knowledge and practice, paving the way for limitless opportunities",
     listItems: [
-      "Customized travel packages to suit all needs",
-      "Luxury hotel bookings at competitive prices",
-      "Guided tours with professional experts",
+      "Customized educational programs",
+      "Practical training for the job market",
+      "Globally recognized certificates",
     ],
   },
   {
     image: "/assets/images/Photo Frame.png",
-    imageSection: "/assets/images/blond-man-with-hat-looking-camera 1.png",
+    imageSection:
+      "/assets/images/young-handsome-physician-medical-robe-with-stethoscope 2.png",
 
-    title: "MBWAY Trusted Source for Products",
+    title: "Medical sector in MBWAY",
     description:
-      "We provide a wide selection of high-quality products at competitive prices, ensuring the best value and customer satisfaction",
+      "Discover the world with our company, where every journey becomes an unforgettable experience ",
     listItems: [
-      "A wide range of high-quality products",
-      "Competitive prices for all customers",
-      "Reliable services with product warranties",
+      "Customized travel packages to suit all needs",
+      "Luxury hotel bookings at competitive prices",
+      "Guided tours with professional experts",
     ],
   },
 ];
@@ -90,29 +94,26 @@ const OurDepartments = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
+
+    // استدعاء onSelect عند التحميل الأولي
     onSelect();
+
+    // إضافة Listener لحدث "select"
     emblaApi.on("select", onSelect);
+
+    // دالة التنظيف: إزالة Listener عند إلغاء التثبيت
     return () => {
       emblaApi.off("select", onSelect);
     };
   }, [emblaApi, onSelect]);
-
-  // تفعيل AOS عند تحميل المكون
   useEffect(() => {
-    AOS.init({
-      duration: 1000, // مدة التأثير
-      once: true, // يمنع إعادة التشغيل عند التمرير لأعلى
-    });
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
   }, []);
 
   return (
     <section className="py-12 my-12 bg-card">
       <div className="container mx-auto px-4">
-        <div
-          className="text-center container"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
+        <div className="text-center container">
           <MainHeading
             title="Departments"
             subtitle="A diverse range of specialized departments to meet all your needs efficiently and professionally"
@@ -124,25 +125,22 @@ const OurDepartments = () => {
             <div className="embla w-full overflow-hidden" ref={emblaRef}>
               <div className="embla__container">
                 {slidesData.map((slide, index) => (
-                  <div
-                    key={index}
-                    className="embla__slide"
-                    style={{ flex: "0 0 90%", marginRight: "20px" }}
-                    data-aos="zoom-in" // تأثير تكبير عند الدخول
-                  >
+                  <div key={index} className="embla__slide">
                     <div
-                      className="p-4 h-[660px] md:h-[500px] bg-cover bg-center bg-no-repeat rounded-xl relative !text-white"
+                      data-aos="fade-up"
+                      data-aos-delay={index * 100}
+                      className="py-4 px-2 md:px-4 h-[660px] md:h-[500px] bg-cover bg-center bg-no-repeat rounded-xl relative !text-white"
                       style={{ backgroundImage: `url("${slide.image}")` }}
                     >
                       {/* Overlay Layer */}
                       <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] w-full h-full relative z-10">
-                        <div
-                          className="w-full md:w-3/4 lg:w-2/3 space-y-1 md:space-y-4 flex-1 text-white"
-                          data-aos="fade-right"
-                        >
-                          <h2 className="text-[30px] md:text-[40px] font-bold mt-0 p-0 leading-7">
+                      <div
+                        data-aos="fade-up"
+                        className="grid grid-cols-1 md:grid-cols-[3fr_1fr] w-full h-full relative z-10"
+                      >
+                        <div className="w-full md:w-3/4 lg:w-2/3 space-y-1 md:space-y-4 flex-1 text-white">
+                          <h2 className="text-[30px] md:text-[40px] font-bold mt-0 p-0 leading-7 lg:leading-10">
                             {slide.title}
                           </h2>
                           <p className="text-[16px] md:text-[20px]">
@@ -156,15 +154,12 @@ const OurDepartments = () => {
                             ))}
                           </ul>
                           <div>
-                            <Button
-                              className="px-10 py-3 w-full !rounded-full"
-                              data-aos="flip-up"
-                            >
+                            <Button className="px-10 py-3 w-full !rounded-full">
                               Explore now
                             </Button>
                           </div>
                         </div>
-                        <div data-aos="fade-left">
+                        <div>
                           <Image
                             src={slide.imageSection}
                             alt=""
@@ -182,10 +177,7 @@ const OurDepartments = () => {
           </ScrollArea>
 
           {/* Pagination Dots */}
-          <div
-            className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2"
-            data-aos="fade-up"
-          >
+          <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
             {slidesData.map((_, index) => (
               <button
                 key={index}

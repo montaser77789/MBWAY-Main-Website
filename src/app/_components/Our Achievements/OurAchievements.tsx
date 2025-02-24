@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import MainHeading from "@/components/main-heading";
 import {
   Users,
@@ -14,6 +14,7 @@ import {
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 
 const achievements = [
   {
@@ -74,8 +75,8 @@ const achievements = [
 
 const OurAchievements = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
-  }, []);
+  AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+}, []);
 
   return (
     <section className="py-12 my-12  container">
@@ -92,26 +93,32 @@ const OurAchievements = () => {
           {achievements.map((item, index) => (
             <div
               key={index}
-              data-aos="fade-up"
+              data-aos-delay={index * 20}
               className="bg-popover p-6 rounded-xl text-center relative border border-popover-foreground "
             >
-              <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-popover-foreground p-3 rounded-full">
+              <div
+             
+                className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-popover-foreground p-3 rounded-full"
+              >
                 <item.icon className="w-8 h-8 text-popover" />
               </div>
               <h3
-               
+                data-aos="fade-up"
+                data-aos-delay={index * 50}
                 className="text-3xl font-bold mt-6 text-popover-foreground"
               >
                 + {item.number}
               </h3>
               <h4
-                
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className="text-[32px] md:text-[40px] font-semibold mt-2 text-popover-foreground"
               >
                 {item.label}
               </h4>
               <p
-                
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
                 className="text-[24px] md:text-[32px] mt-2 text-popover-foreground"
               >
                 {item.description}

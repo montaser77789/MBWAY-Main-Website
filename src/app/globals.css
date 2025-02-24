@@ -94,8 +94,6 @@ body {
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -111,20 +109,28 @@ body {
 
 .embla__container {
   display: flex;
-  width: 100%; /* يضمن أن الشرائح لا تتجاوز العرض */
+  width: 100%; 
 }
 
-
 .embla__slide {
-  flex: 0 0 90%; /* عرض الشريحة 90% مع ظهور جزء من التالية */
+  flex: 0 0 90%; 
   margin-right: 10px;
   position: relative;
 }
 
-/* لجعل الشرائح مناسبة للموبايل */
-@media (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .embla__slide {
-    flex: 0 0 100%; /* كل شريحة تأخذ 100% من العرض */
-    margin-right: 0; /* إزالة المسافات الجانبية */
+    flex: 0 0 55%; 
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .embla__slide {
+    flex: 0 0 75%; 
+  }
+}
+@media screen and (min-width: 1280px) {
+  .embla__slide {
+    flex: 0 0 80%; 
   }
 }
