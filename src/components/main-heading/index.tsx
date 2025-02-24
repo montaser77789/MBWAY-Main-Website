@@ -1,13 +1,22 @@
-import React from 'react'
+import React from "react";
 
-const MainHeading = ({title , subtitle}: {title: string, subtitle: string}) => {
+const MainHeading = ({
+  title,
+  subtitle,
+  color
+}: {
+  title: string;
+  subtitle: string;
+  color?: string;
+}) => {
   return (
     <div>
-        <h2 className='text-[40px] font-bold md:text-[50px] text-primary '><span className='text-foreground'>Our</span> {title}</h2>
-        <p className='mt-2 text-[24px] font-medium md:text-[32px]'>{subtitle}</p>
-      
+      <h2 className={`text-[40px] font-bold md:text-[50px] ${color}`} >
+        <span className="text-foreground">Our</span> {title}
+      </h2>
+      <p className={`mt-2 text-[24px] font-medium md:text-[32px] ${color}`}>{subtitle}</p>
     </div>
-  )
-}
+  );
+};
 
-export default MainHeading
+export default MainHeading;

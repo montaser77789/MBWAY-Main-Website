@@ -1,6 +1,8 @@
 "use client";
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import AOS from "aos";
+import "aos/dist/aos.css"; // استيراد أنماط AOS
 import { ScrollArea } from "@/components/ui/scroll-area";
 import MainHeading from "@/components/main-heading";
 import { Button } from "@/components/ui/button";
@@ -88,23 +90,29 @@ const OurDepartments = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
-
-    // استدعاء onSelect عند التحميل الأولي
     onSelect();
-
-    // إضافة Listener لحدث "select"
     emblaApi.on("select", onSelect);
-
-    // دالة التنظيف: إزالة Listener عند إلغاء التثبيت
     return () => {
       emblaApi.off("select", onSelect);
     };
   }, [emblaApi, onSelect]);
 
+  // تفعيل AOS عند تحميل المكون
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // مدة التأثير
+      once: true, // يمنع إعادة التشغيل عند التمرير لأعلى
+    });
+  }, []);
+
   return (
     <section className="py-12 my-12 bg-card">
       <div className="container mx-auto px-4">
-        <div className="text-center container">
+        <div
+          className="text-center container"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
           <MainHeading
             title="Departments"
             subtitle="A diverse range of specialized departments to meet all your needs efficiently and professionally"
@@ -119,7 +127,8 @@ const OurDepartments = () => {
                   <div
                     key={index}
                     className="embla__slide"
-                    style={{ flex: "0 0 90%", marginRight: "20px" }} // عرض الشريحة وإظهار جزء من الشريحة التالية
+                    style={{ flex: "0 0 90%", marginRight: "20px" }}
+                    data-aos="zoom-in" // تأثير تكبير عند الدخول
                   >
                     <div
                       className="p-4 h-[660px] md:h-[500px] bg-cover bg-center bg-no-repeat rounded-xl relative !text-white"
@@ -129,7 +138,10 @@ const OurDepartments = () => {
                       <div className="absolute inset-0 bg-black/50 rounded-xl"></div>
 
                       <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] w-full h-full relative z-10">
-                        <div className="w-full md:w-3/4 lg:w-2/3 space-y-1 md:space-y-4 flex-1 text-white">
+                        <div
+                          className="w-full md:w-3/4 lg:w-2/3 space-y-1 md:space-y-4 flex-1 text-white"
+                          data-aos="fade-right"
+                        >
                           <h2 className="text-[30px] md:text-[40px] font-bold mt-0 p-0 leading-7">
                             {slide.title}
                           </h2>
@@ -144,12 +156,15 @@ const OurDepartments = () => {
                             ))}
                           </ul>
                           <div>
-                            <Button className="px-10 py-3 w-full !rounded-full">
+                            <Button
+                              className="px-10 py-3 w-full !rounded-full"
+                              data-aos="flip-up"
+                            >
                               Explore now
                             </Button>
                           </div>
                         </div>
-                        <div>
+                        <div data-aos="fade-left">
                           <Image
                             src={slide.imageSection}
                             alt=""
@@ -167,7 +182,10 @@ const OurDepartments = () => {
           </ScrollArea>
 
           {/* Pagination Dots */}
-          <div className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2">
+          <div
+            className="absolute bottom-[-30px] left-1/2 transform -translate-x-1/2 flex space-x-2"
+            data-aos="fade-up"
+          >
             {slidesData.map((_, index) => (
               <button
                 key={index}

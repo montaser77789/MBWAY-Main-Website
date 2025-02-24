@@ -21,8 +21,8 @@ body {
     --foreground: 0 0% 0%; /* أسود */
     --card: 0 0% 100%; /* أبيض */
     --card-foreground: 0 0% 0%; /* أسود */
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
+    --popover: 0 0% 100%; /* أبيض */
+    --popover-foreground: 0 100% 50%; /* أحمر */
     --primary: 0 100% 50%; /* أسود */
     --primary-foreground: 0 0% 100%; /* أبيض */
     --secondary: 0 0% 90%; /* رمادي فاتح */
@@ -51,8 +51,8 @@ body {
     --foreground: 0 0% 100%; /* أبيض */
     --card: 0 0% 15%; /* رمادي داكن */
     --card-foreground: 0 0% 100%; /* أبيض */
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 100% 50%; /* أحمر */
+    --popover-foreground: 0 0% 100%; /* أبيض */
     --primary: 0 100% 50%; /* أحمر */
     --primary-foreground: 0 0% 100%; /* أبيض */
     --secondary: 0 0% 20%; /* رمادي داكن */
