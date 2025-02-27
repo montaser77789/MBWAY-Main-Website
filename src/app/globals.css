@@ -109,28 +109,40 @@ body {
 
 .embla__container {
   display: flex;
-  width: 100%; 
+  width: 100%;
 }
 
 .embla__slide {
-  flex: 0 0 90%; 
+  flex: 0 0 90%;
   margin-right: 10px;
   position: relative;
 }
 
 @media screen and (min-width: 768px) {
   .embla__slide {
-    flex: 0 0 55%; 
+    flex: 0 0 55%;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .embla__slide {
-    flex: 0 0 75%; 
+    flex: 0 0 75%;
   }
 }
 @media screen and (min-width: 1280px) {
   .embla__slide {
-    flex: 0 0 80%; 
+    flex: 0 0 80%;
   }
+}
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
 }

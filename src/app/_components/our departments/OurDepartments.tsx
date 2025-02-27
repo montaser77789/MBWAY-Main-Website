@@ -111,7 +111,7 @@ const OurDepartments = () => {
   }, []);
 
   return (
-    <section className="py-12 my-12 bg-card">
+    <section className="py-12 my-12 bg-[#f5f5f5]  dark:bg-black">
       <div className="container mx-auto px-4">
         <div className="text-center container">
           <MainHeading

@@ -6,7 +6,7 @@ const MainHeading = ({
   color
 }: {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   color?: string;
 }) => {
   return (
