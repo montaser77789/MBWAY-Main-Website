@@ -146,3 +146,14 @@ body {
 .animate-scroll {
   animation: scroll 30s linear infinite;
 }
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: red !important;
+  opacity: 0.7;
+}
+.swiper-pagination-bullet-active {
+  background-color: darkred !important;
+  transform: scale(1.2);
+}
+

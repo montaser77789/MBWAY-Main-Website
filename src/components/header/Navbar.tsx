@@ -5,6 +5,7 @@ import Link from "../link";
 import { Button, buttonVariants } from "../ui/button";
 import { useState } from "react";
 import { ThemeToggle } from "../ui/Them-toggel";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -25,6 +26,9 @@ const Navbar = () => {
       href: Routes.CONTACT,
     },
   ];
+  const pathbame = usePathname();
+
+  console.log(pathbame);
   return (
     <nav className="flex-1  justify-end lg:justify-center items-center gap-5  flex ">
       <Button
@@ -54,6 +58,7 @@ const Navbar = () => {
           {links.map((link) => (
             <li className="py-2 " key={link.id}>
               <Link
+                onClick={() => setOpenMenu(false)}
                 className={`${
                   link.href === `${Routes.AUTH}/${Pages.LOGIN}`
                     ? `${buttonVariants({ size: "lg" })} !px-8  `
@@ -62,8 +67,12 @@ const Navbar = () => {
                         variant: "outline",
                         size: "lg",
                       })} !px-8 `
-                    : " text-foreground duration-200 transition-colors px-4"
-                } font-semibold`}
+                    : " duration-200 transition-colors px-4"
+                } font-semibold ${
+                  pathbame == `/${link.href}`
+                    ? "text-[#FF0000]"
+                    : "text-foreground "
+                }`}
                 href={link.href}
               >
                 {link.title}
@@ -72,7 +81,7 @@ const Navbar = () => {
           ))}
         </div>
       </ul>
-      <div className="order-1">
+      <div className="order-1 ">
         <ThemeToggle />
       </div>
     </nav>
