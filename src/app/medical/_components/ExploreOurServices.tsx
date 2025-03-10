@@ -5,7 +5,7 @@ function ExploreOurServices() {
   return (
     <section className="mt-5">
       <div
-        className="bg-cover bg-center bg-no-repeat py-60 md:py-44 relative "
+        className="bg-cover bg-center bg-no-repeat py-64 md:py-44 relative "
         style={{ backgroundImage: `url(${img1.src})` }} // إصلاح المشكلة هنا
       >
         <div className="container text-center text-popover bg-black/50 p-4  absolute  top-0 bottom-0 ">
