@@ -11,10 +11,10 @@ const MainHeading = ({
 }) => {
   return (
     <div>
-      <h2 className={`text-[40px] font-bold md:text-[50px] ${color}`} >
+      <h2 className={`text-[30px] font-semibold md:font-bold md:text-[50px] ${color}`} >
         <span className="text-foreground">Our</span> {title}
       </h2>
-      <p className={`mt-2 text-[24px] font-medium md:text-[32px] ${color}`}>{subtitle}</p>
+      <p className={`mt-2 text-[18px] font-semibold md:font-medium md:text-[32px] ${color}`}>{subtitle}</p>
     </div>
   );
 };

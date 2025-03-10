@@ -8,7 +8,7 @@ function ExploreOurServices() {
         className="bg-cover bg-center bg-no-repeat py-64 md:py-44 relative "
         style={{ backgroundImage: `url(${img1.src})` }} // إصلاح المشكلة هنا
       >
-        <div className="container text-center text-popover bg-black/50 p-4  absolute  top-0 bottom-0 ">
+        <div className="container text-center text-popover-foreground bg-black/50 p-4  absolute  top-0 bottom-0 ">
           <h2 className="text-2xl font-semibold md:text-5xl max-w-screen-lg m-auto">
             Explore our services and special offers now
           </h2>
@@ -19,8 +19,14 @@ function ExploreOurServices() {
             because your comfort and health are always our priority.
           </p>
           <div className="flex gap-2 w-full mt-4 max-w-screen-lg m-auto">
-            <Button size={"lg"} className="w-full">Sign up</Button>
-            <Button size={"lg"} variant={"outline"} className="w-full text-black dark:text-white">
+            <Button size={"lg"} className="w-full">
+              Sign up
+            </Button>
+            <Button
+              size={"lg"}
+              variant={"outline"}
+              className="w-full text-black dark:text-white"
+            >
               As guest
             </Button>
           </div>
