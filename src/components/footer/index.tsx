@@ -16,7 +16,7 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
   const pathname  = usePathname()
   return (
-    <footer className={pathname.startsWith("/medical") ? "container relative bg-[#EDEDED]  dark:bg-[#353535]  py-10 mt-0" : "mt-28"} >
+    <footer className={pathname.startsWith("/medical") ? "container relative bg-[#EDEDED]  dark:bg-[#353535]  py-10 mt-0" : "mt-28 container relative bg-[#EDEDED]  dark:bg-[#353535]  py-10"} >
       <div className="  w-full mx-auto px-6"> 
         {/* Newsletter Section */}
         <Card className="bg-[#FF0000] absolute w-full -top-20 left-1/2 -translate-x-1/2 max-w-3xl text-white p-6 rounded-2xl shadow-xl">
